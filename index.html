@@ -11,7 +11,7 @@
 		var iMax = aNums[0];
 
 		for(var iCount=0; iCount<aNums.length; iCount++) {
-			if(iMax > aNums[iCount]) {
+			if(iMax < aNums[iCount]) {
 				iMax = aNums[iCount];
 			}
 		}
@@ -44,7 +44,7 @@
 	var aAverageGrades = [];
 
 	for(var iCount=0; iCount<iSize; iCount++) {
-		var fAverage = (aGradesPhysics[iCount] + aGradesChemistry[iCount] + aGradesBiology[iCount]) / aGradesPhysics.length;
+		var fAverage = (aGradesPhysics[iCount] + aGradesChemistry[iCount] + aGradesBiology[iCount]) / 3;
 		aAverageGrades.push(fAverage);
 	}
 	var iTopGrade = findMax(aAverageGrades);
@@ -57,7 +57,7 @@
 
 			document.write('Student '+(iCount+1)+': Fail'+'<br>');
 
-		} else if(aAverageGrades[iCount] > 50 && aAverageGrades[iCount] < 80) {
+		} else if(aAverageGrades[iCount] >= 50 && aAverageGrades[iCount] <= 80) {
 
 			document.write('Student '+(iCount+1)+': Pass<br>');
 
