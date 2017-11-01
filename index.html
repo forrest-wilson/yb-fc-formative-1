@@ -11,7 +11,7 @@
 		var iMax = aNums[0];
 
 		for(var iCount=0; iCount<aNums.length; iCount++) {
-			if(iMax < aNums[iCount]) {
+			if(iMax < aNums[iCount]) { // Forrest | 01/11/17 | Flipped the > to a < as it was looking for the smallest average, not the largest
 				iMax = aNums[iCount];
 			}
 		}
@@ -25,7 +25,7 @@
 	var iSize = parseInt(prompt('Class size?'));
 	var aGradesPhysics = [];
 	var aGradesChemistry = [];
-	var aGradesBiology = [];
+	var aGradesBiology = []; // Forrest | 01/11/17 | Set the value type to an empty array
 
 	//ParseInt does the same as Number but removes anything other than a number from the value if input
 	//Example parseInt(abc123) will give you 123
@@ -36,7 +36,7 @@
 		var iGradeChemistry = parseInt(prompt('Student '+(iCount+1)+': Grade for Biology out of 100'));
 		aGradesChemistry.push(iGradeChemistry);
 
-		var iGradeBiology = parseInt(prompt('Student '+(iCount+1)+': Grade for Chemistry out of 100'));
+		var iGradeBiology = parseInt(prompt('Student '+(iCount+1)+': Grade for Chemistry out of 100')); // Forrest | 01/11/17 | Fixed the concatenation operator
 		aGradesBiology.push(iGradeBiology);
 	}
 	
@@ -47,7 +47,7 @@
 		var fAverage = (aGradesPhysics[iCount] + aGradesChemistry[iCount] + aGradesBiology[iCount]) / 3;
 		aAverageGrades.push(fAverage);
 	}
-	var iTopGrade = findMax(aAverageGrades);
+	var iTopGrade = findMax(aAverageGrades); // Forrest | 01/11/17 | Corrected the invokation
 
 	//output: list result for each student and top grade
 
@@ -57,6 +57,7 @@
 
 			document.write('Student '+(iCount+1)+': Fail<br>');
 
+		// Forrest | 01/11/17 | Changed the > to a >= in order for an average of 50 to not be passed to the else clause
 		} else if(aAverageGrades[iCount] >= 50 && aAverageGrades[iCount] <= 80) {
 
 			document.write('Student '+(iCount+1)+': Pass<br>');
